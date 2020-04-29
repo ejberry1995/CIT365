@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Color Pallet: https://coolors.co/0a1b6a-011627-fdfffc-8fbfe0-d64045
+
 namespace TimedMathQuiz
 {
     public partial class mathQuizForm : Form
@@ -37,13 +39,14 @@ namespace TimedMathQuiz
         public mathQuizForm()
         {
             InitializeComponent();
+            todayLabel.Text = DateTime.Now.ToString("dd MMMM yyyy");
         }
 
         // Starts the quiz by generating random numbers,
         // inserting them into the math problems and
         // starting the timer
         public void StartTheQuiz() 
-        {   
+        {
             // generate random numbers for addition
             addend1 = randomizer.Next(51);
             addend2 = randomizer.Next(51);
@@ -77,12 +80,6 @@ namespace TimedMathQuiz
             dividendLabel.Text = dividend.ToString();
             divisorLabel.Text = divisor.ToString();
 
-            // ensure answer values are all zero
-            sumUpDown.Value = 0;
-            differenceUpDown.Value = 0;
-            productUpDown.Value = 0;
-            quotientUpDown.Value = 0;
-
             // start the timer
             timeLeft = 30;
             timeLabel.Text = "30 seconds";
@@ -106,7 +103,10 @@ namespace TimedMathQuiz
         private void startButton_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
+
+            startButton.Visible = false;
             startButton.Enabled = false;
+
         }
 
         private void quizTimer_Tick(object sender, EventArgs e)
@@ -124,14 +124,16 @@ namespace TimedMathQuiz
             {
                 // update the time display
                 timeLeft--;
-                timeLabel.Text = timeLeft + " seconds";
+                timeLabel.Text = timeLeft + " Seconds";
+                if (timeLeft < 6)
+                    timeLabel.ForeColor = Color.FromArgb(214,64,69);
             }
             else
             {
                 quizTimer.Stop();
 
                 // update the display and show a message box
-                timeLabel.Text = "Time's up!";
+                timeLabel.Text = "0 Seconds";
                 MessageBox.Show("You didn't finish in time.", "Sorry!");
 
                 // display the correct answers
@@ -140,9 +142,25 @@ namespace TimedMathQuiz
                 productUpDown.Value = multiplicand * multiplier;
                 quotientUpDown.Value = dividend / divisor;
 
-                startButton.Enabled = true;
+                reset_quiz();
                 
             }
+        }
+
+        private void reset_quiz()
+        {
+            //reset the start button
+            startButton.Visible = true;
+            startButton.Enabled = true;
+
+            timeLabel.ForeColor = Color.FromArgb(1, 22, 39);
+            timeLabel.Text = "30 Seconds";
+
+            // ensure answer values are all zero
+            sumUpDown.Value = 0;
+            differenceUpDown.Value = 0;
+            productUpDown.Value = 0;
+            quotientUpDown.Value = 0;
         }
 
         private void answer_Enter(object sender, EventArgs e)
@@ -156,5 +174,6 @@ namespace TimedMathQuiz
                 answerBox.Select(0, lengthOfAnswer);
             }
         }
+
     }
 }
