@@ -72,7 +72,7 @@
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(134, 29);
             this.timeLabel.TabIndex = 0;
-            this.timeLabel.Text = " 30 Seconds";
+            this.timeLabel.Text = "30 Seconds";
             // 
             // timeLeftLable
             // 
@@ -367,6 +367,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(191)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(480, 407);
+            this.Controls.Add(this.timeLabel);
+            this.Controls.Add(this.timeLeftLable);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.todayLabel);
             this.Controls.Add(this.startButton);
@@ -390,8 +392,6 @@
             this.Controls.Add(this.plusSignLabel);
             this.Controls.Add(this.addendRightLabel);
             this.Controls.Add(this.addendLeftLabel);
-            this.Controls.Add(this.timeLeftLable);
-            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.appName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
