@@ -161,6 +161,16 @@ namespace TimedMathQuiz
             differenceUpDown.Value = 0;
             productUpDown.Value = 0;
             quotientUpDown.Value = 0;
+
+            // reset the math problem to show ?
+            addendLeftLabel.Text = "?";
+            addendRightLabel.Text = "?";
+            minuendLabel.Text = "?";
+            subtrahendLabel.Text = "?";
+            multiplicandLabel.Text = "?";
+            multiplierLabel.Text = "?";
+            dividendLabel.Text = "?";
+            divisorLabel.Text = "?";
         }
 
         private void answer_Enter(object sender, EventArgs e)
