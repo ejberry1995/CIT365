@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Mega_Desk
 {
-    class Desk
+    public class Desk
     {
         private double width;
         private double depth;

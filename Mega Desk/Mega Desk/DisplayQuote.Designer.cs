@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.customerLabel = new System.Windows.Forms.Label();
+            this.widthLabel = new System.Windows.Forms.Label();
+            this.materialLabel = new System.Windows.Forms.Label();
+            this.depthLabel = new System.Windows.Forms.Label();
+            this.drawersLabel = new System.Windows.Forms.Label();
+            this.daysLabel = new System.Windows.Forms.Label();
+            this.quoteLable = new System.Windows.Forms.Label();
+            this.continueButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,109 +44,110 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(89, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 26);
+            this.label1.Size = new System.Drawing.Size(180, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Project Quote";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // customerLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 124);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "FirstName LastName";
+            this.customerLabel.AutoSize = true;
+            this.customerLabel.Location = new System.Drawing.Point(34, 58);
+            this.customerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.customerLabel.Name = "customerLabel";
+            this.customerLabel.Size = new System.Drawing.Size(208, 17);
+            this.customerLabel.TabIndex = 1;
+            this.customerLabel.Text = "Customer: FirstName LastName";
             // 
-            // label3
+            // widthLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(129, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "X";
+            this.widthLabel.AutoSize = true;
+            this.widthLabel.Location = new System.Drawing.Point(34, 91);
+            this.widthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.widthLabel.Name = "widthLabel";
+            this.widthLabel.Size = new System.Drawing.Size(88, 17);
+            this.widthLabel.TabIndex = 2;
+            this.widthLabel.Text = "Desk Width: ";
             // 
-            // label4
+            // materialLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(195, 155);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Y";
+            this.materialLabel.AutoSize = true;
+            this.materialLabel.Location = new System.Drawing.Point(34, 154);
+            this.materialLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel.Name = "materialLabel";
+            this.materialLabel.Size = new System.Drawing.Size(119, 17);
+            this.materialLabel.TabIndex = 4;
+            this.materialLabel.Text = "Surface Material: ";
             // 
-            // label5
+            // depthLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(88, 155);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Width";
+            this.depthLabel.AutoSize = true;
+            this.depthLabel.Location = new System.Drawing.Point(152, 91);
+            this.depthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.depthLabel.Name = "depthLabel";
+            this.depthLabel.Size = new System.Drawing.Size(90, 17);
+            this.depthLabel.TabIndex = 6;
+            this.depthLabel.Text = "Desk Depth: ";
             // 
-            // label6
+            // drawersLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(153, 155);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Depth";
+            this.drawersLabel.AutoSize = true;
+            this.drawersLabel.Location = new System.Drawing.Point(34, 122);
+            this.drawersLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.drawersLabel.Name = "drawersLabel";
+            this.drawersLabel.Size = new System.Drawing.Size(134, 17);
+            this.drawersLabel.TabIndex = 7;
+            this.drawersLabel.Text = "Number of Drawers:";
             // 
-            // label7
+            // daysLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(109, 196);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Z";
+            this.daysLabel.AutoSize = true;
+            this.daysLabel.Location = new System.Drawing.Point(34, 186);
+            this.daysLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.daysLabel.Name = "daysLabel";
+            this.daysLabel.Size = new System.Drawing.Size(136, 17);
+            this.daysLabel.TabIndex = 8;
+            this.daysLabel.Text = "Days for production:";
             // 
-            // label8
+            // quoteLable
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(153, 196);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Drawers";
+            this.quoteLable.AutoSize = true;
+            this.quoteLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quoteLable.Location = new System.Drawing.Point(37, 219);
+            this.quoteLable.Name = "quoteLable";
+            this.quoteLable.Size = new System.Drawing.Size(106, 31);
+            this.quoteLable.TabIndex = 9;
+            this.quoteLable.Text = "Price: $";
             // 
-            // label9
+            // continueButton
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(59, 227);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Surface Material";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(156, 227);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Laminate";
+            this.continueButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.continueButton.Location = new System.Drawing.Point(89, 264);
+            this.continueButton.Name = "continueButton";
+            this.continueButton.Size = new System.Drawing.Size(180, 55);
+            this.continueButton.TabIndex = 10;
+            this.continueButton.Text = "Continue";
+            this.continueButton.UseVisualStyleBackColor = true;
+            this.continueButton.Click += new System.EventHandler(this.continueButton_Click);
             // 
             // DisplayQuote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(356, 344);
+            this.ControlBox = false;
+            this.Controls.Add(this.continueButton);
+            this.Controls.Add(this.quoteLable);
+            this.Controls.Add(this.daysLabel);
+            this.Controls.Add(this.drawersLabel);
+            this.Controls.Add(this.depthLabel);
+            this.Controls.Add(this.materialLabel);
+            this.Controls.Add(this.widthLabel);
+            this.Controls.Add(this.customerLabel);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DisplayQuote";
             this.Text = "Mega Desk: Project Quotes";
             this.ResumeLayout(false);
@@ -158,14 +158,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label customerLabel;
+        private System.Windows.Forms.Label widthLabel;
+        private System.Windows.Forms.Label materialLabel;
+        private System.Windows.Forms.Label depthLabel;
+        private System.Windows.Forms.Label drawersLabel;
+        private System.Windows.Forms.Label daysLabel;
+        private System.Windows.Forms.Label quoteLable;
+        private System.Windows.Forms.Button continueButton;
     }
 }

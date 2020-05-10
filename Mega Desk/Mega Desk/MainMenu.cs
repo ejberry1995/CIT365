@@ -12,7 +12,10 @@ namespace Mega_Desk
 {
     public partial class MainMenu : Form
     {
-        AddQuote addQuote = new AddQuote();
+        public AddQuote addQuote = new AddQuote();
+        public DisplayQuote displayQuote;
+
+        List<DeskQuote> deskQuotes;
 
         public MainMenu()
         {
@@ -41,8 +44,14 @@ namespace Mega_Desk
         private void newQuoteButton_Click(object sender, EventArgs e)
         {
             addQuote.ShowDialog();
-
+            displayQuote = new DisplayQuote(addQuote.newQuote);
+            displayQuote.ShowDialog();
+            deskQuotes.Add(addQuote.newQuote);
         }
 
+        private void searchQuotesButton_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

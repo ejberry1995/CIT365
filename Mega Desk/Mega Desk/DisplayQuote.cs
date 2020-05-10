@@ -17,9 +17,24 @@ namespace Mega_Desk
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public DisplayQuote(DeskQuote deskQuote)
         {
+            InitializeComponent();
 
+            Desk desk = deskQuote.getDesk();
+
+            customerLabel.Text += deskQuote.getCustomer();
+            widthLabel.Text += desk.getWidth();
+            depthLabel.Text += desk.getDepth();
+            drawersLabel.Text += desk.getNumOfDrawers();
+            materialLabel.Text += desk.getMaterial();
+            daysLabel.Text += deskQuote.getOrderDays();
+            quoteLable.Text += deskQuote.getQuote();
+        }
+
+        private void continueButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

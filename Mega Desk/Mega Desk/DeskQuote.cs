@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Mega_Desk
 {
-    class DeskQuote
+    public class DeskQuote
     {
         private Customer customer;
         int productionDays;
@@ -16,6 +16,11 @@ namespace Mega_Desk
         public void setDesk(double width, double depth, string material, int numDrawers)
         {
             desk = new Desk(width, depth, material, numDrawers);
+        }
+
+        public Desk getDesk()
+        {
+            return desk;
         }
 
         public void setCustomer(string first, string last)

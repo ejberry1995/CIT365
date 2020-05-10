@@ -12,7 +12,8 @@ namespace Mega_Desk
 {
     public partial class AddQuote : Form
     {
-        DeskQuote newQuote;
+        public DeskQuote newQuote;
+
         public AddQuote()
         {
             InitializeComponent();
@@ -150,7 +151,6 @@ namespace Mega_Desk
                 getMaterialSelection(), (int)numDrawersUpDown.Value);
             newQuote.setCustomer(firstNameBox.Text, lastNameBox.Text);
             newQuote.setOrderDays(getDaysSelection());
-
         }
 
         private int getDaysSelection() 
@@ -169,8 +169,6 @@ namespace Mega_Desk
             }
             else
                 return Constants.standardProduction;
-
-
         }
 
         private string getMaterialSelection()
