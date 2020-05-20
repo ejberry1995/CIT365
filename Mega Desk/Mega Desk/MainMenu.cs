@@ -8,23 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Color pallet: https://coolors.co/f2c600-db3a34-084c61-177e89-393e41-d3d0cb
+
 namespace Mega_Desk
 {
     public partial class MainMenu : Form
     {
-        public AddQuote addQuote = new AddQuote();
+        public AddQuote addQuote;
         public DisplayQuote displayQuote;
+        public ViewAllQuotes viewAllQuotes;
 
-        List<DeskQuote> deskQuotes;
+        List<DeskQuote> deskQuoteList = new List<DeskQuote>();
 
         public MainMenu()
         {
             InitializeComponent();
+
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -43,15 +47,28 @@ namespace Mega_Desk
 
         private void newQuoteButton_Click(object sender, EventArgs e)
         {
+            addQuote = new AddQuote();
             addQuote.ShowDialog();
-            displayQuote = new DisplayQuote(addQuote.newQuote);
-            displayQuote.ShowDialog();
-            deskQuotes.Add(addQuote.newQuote);
+
+            if (addQuote.newQuote != null)
+            {
+                displayQuote = new DisplayQuote(addQuote.newQuote);
+                displayQuote.ShowDialog();
+                deskQuoteList.Add(addQuote.newQuote);
+            }
         }
 
         private void searchQuotesButton_Click(object sender, EventArgs e)
         {
-           
+            viewAllQuotes = new ViewAllQuotes(deskQuoteList);
+            viewAllQuotes.ShowDialog();
         }
+
+        private void viewQuotesButton_Click(object sender, EventArgs e)
+        {
+            viewAllQuotes = new ViewAllQuotes(deskQuoteList);
+            viewAllQuotes.ShowDialog();
+        }
+
     }
 }

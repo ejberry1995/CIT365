@@ -9,7 +9,7 @@ namespace Mega_Desk
 {
     public class DeskQuote
     {
-        private Customer customer;
+        public Customer customer;
         int productionDays;
         Desk desk;
 
@@ -39,7 +39,7 @@ namespace Mega_Desk
             productionDays = d;
         }
 
-        public int getOrderDays()
+        public int getProductionDays()
         {
             return productionDays;
         }

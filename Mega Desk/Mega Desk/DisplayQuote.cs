@@ -28,13 +28,13 @@ namespace Mega_Desk
             depthLabel.Text += desk.getDepth();
             drawersLabel.Text += desk.getNumOfDrawers();
             materialLabel.Text += desk.getMaterial();
-            daysLabel.Text += deskQuote.getOrderDays();
+            daysLabel.Text += deskQuote.getProductionDays();
             quoteLable.Text += deskQuote.getQuote();
         }
 
         private void continueButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

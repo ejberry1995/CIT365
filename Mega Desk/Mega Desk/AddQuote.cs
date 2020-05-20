@@ -17,11 +17,16 @@ namespace Mega_Desk
         public AddQuote()
         {
             InitializeComponent();
+            newQuote = null;
+
             radioMaterial0.Text = Constants.materialCost.Keys.ElementAt(0);
             radioMaterial1.Text = Constants.materialCost.Keys.ElementAt(1);
             radioMaterial2.Text = Constants.materialCost.Keys.ElementAt(2);
             radioMaterial3.Text = Constants.materialCost.Keys.ElementAt(3);
             radioMaterial4.Text = Constants.materialCost.Keys.ElementAt(4);
+
+            widthBox.Value = (decimal)Constants.minWidth;
+            depthBox.Value = (decimal)Constants.minDepth;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -29,7 +34,7 @@ namespace Mega_Desk
             if (MessageBox.Show("Are you sure you cancel this quote?",
                 "Cancel?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                this.Close();
+                Close();
             }
         }
 
@@ -48,7 +53,7 @@ namespace Mega_Desk
                     "Calculate quote?",MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     createDeskQuote();
-                    this.Close();
+                    Close();
                 }
             }
         }
@@ -139,6 +144,7 @@ namespace Mega_Desk
             }
             else 
             {
+                numDrawersErrorProvider.SetError(numDrawersUpDown, String.Empty);
                 return true;
             }
         }
@@ -195,6 +201,31 @@ namespace Mega_Desk
             }
 
             return "unknown";
+        }
+
+        private void widthBox_Leave(object sender, EventArgs e)
+        {
+            checkWidth();
+        }
+
+        private void depthBox_Leave(object sender, EventArgs e)
+        {
+            checkDepth();
+        }
+
+        private void numDrawersUpDown_Leave(object sender, EventArgs e)
+        {
+            checkNumDrawers();
+        }
+
+        private void firstNameBox_Leave(object sender, EventArgs e)
+        {
+            checkFirstName();
+        }
+
+        private void lastNameBox_Leave(object sender, EventArgs e)
+        {
+            checkLastName();
         }
     }
 }
