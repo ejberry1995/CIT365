@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchQuotes));
             this.label1 = new System.Windows.Forms.Label();
             this.materialListBox = new System.Windows.Forms.ListBox();
-            this.materialBoxLabel = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -39,32 +38,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 20);
+            this.label1.Font = new System.Drawing.Font("Rockwell Extra Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
+            this.label1.Location = new System.Drawing.Point(17, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 31);
+            this.label1.Size = new System.Drawing.Size(353, 35);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Search";
+            this.label1.Text = "Search by Material";
             // 
             // materialListBox
             // 
+            this.materialListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.materialListBox.FormattingEnabled = true;
-            this.materialListBox.ItemHeight = 16;
-            this.materialListBox.Location = new System.Drawing.Point(22, 99);
+            this.materialListBox.ItemHeight = 25;
+            this.materialListBox.Location = new System.Drawing.Point(23, 67);
             this.materialListBox.Name = "materialListBox";
-            this.materialListBox.Size = new System.Drawing.Size(135, 116);
+            this.materialListBox.Size = new System.Drawing.Size(169, 129);
             this.materialListBox.TabIndex = 20;
-            // 
-            // materialBoxLabel
-            // 
-            this.materialBoxLabel.AutoSize = true;
-            this.materialBoxLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.materialBoxLabel.Location = new System.Drawing.Point(19, 79);
-            this.materialBoxLabel.Name = "materialBoxLabel";
-            this.materialBoxLabel.Size = new System.Drawing.Size(111, 17);
-            this.materialBoxLabel.TabIndex = 21;
-            this.materialBoxLabel.Text = "Surface Material";
             // 
             // searchButton
             // 
@@ -73,7 +64,7 @@
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.Color.White;
-            this.searchButton.Location = new System.Drawing.Point(163, 79);
+            this.searchButton.Location = new System.Drawing.Point(198, 58);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(173, 75);
             this.searchButton.TabIndex = 23;
@@ -88,7 +79,7 @@
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(163, 160);
+            this.cancelButton.Location = new System.Drawing.Point(198, 139);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(173, 75);
             this.cancelButton.TabIndex = 22;
@@ -100,10 +91,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 315);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(208)))), ((int)(((byte)(203)))));
+            this.ClientSize = new System.Drawing.Size(401, 239);
+            this.ControlBox = false;
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.materialBoxLabel);
             this.Controls.Add(this.materialListBox);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -119,7 +111,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox materialListBox;
-        private System.Windows.Forms.Label materialBoxLabel;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button cancelButton;
     }

@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 //Color pallet: https://coolors.co/f2c600-db3a34-084c61-177e89-393e41-d3d0cb
 
@@ -25,6 +20,7 @@ namespace Mega_Desk
         public MainMenu()
         {
             rushOrderPrices = loadRushOrderPrices();
+            loadQuotesFromFile();
             InitializeComponent();
 
         }
@@ -48,6 +44,47 @@ namespace Mega_Desk
             }
         }
 
+        private void loadQuotesFromFile()
+        {
+            try
+            {
+                string[] fileContents = File.ReadAllLines(Constants.quoteFilePath);
+
+                foreach (string line in fileContents)
+                {
+                    DeskQuote deserializedQuote = JsonConvert.DeserializeObject<DeskQuote>(line);
+                    deskQuoteList.Add(deserializedQuote);
+                }
+            }
+            catch
+            {
+                MessageBox.Show($"Mega Desk: Project Quote Caluculator is uable to " +
+                    $"open {Constants.quoteFilePath}. " +
+                    $"The file may be missing or in the wrong format.\n" +
+                    $"The program will proceed without loading saved quotes.",
+                   "Error Encountered While Opening File", MessageBoxButtons.OK);
+
+            }
+        }
+
+        private bool writeQuoteToFile(DeskQuote quote)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(quote);
+
+                using (StreamWriter writetext = new StreamWriter(Constants.quoteFilePath, true))
+                {
+                    writetext.WriteLine(json);
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void newQuoteButton_Click(object sender, EventArgs e)
         {
             addQuote = new AddQuote();
@@ -57,7 +94,14 @@ namespace Mega_Desk
             {
                 displayQuote = new DisplayQuote(addQuote.newQuote);
                 displayQuote.ShowDialog();
-                deskQuoteList.Add(addQuote.newQuote);
+
+                // if writing the quote is successful, add to the list
+                // else, alert the user the quote could not be saved
+                if (writeQuoteToFile(addQuote.newQuote))
+                    deskQuoteList.Add(addQuote.newQuote);
+                else
+                    MessageBox.Show("The desk quote could not be saved.",
+                        "Error: Unable to save", MessageBoxButtons.OK);
             }
         }
 
@@ -84,11 +128,11 @@ namespace Mega_Desk
 
                 double[,] rushOrderPrices = new double[optionCountMax + 1, Constants.rushOrderOptions.Count];
 
-                string[] fileContents = File.ReadAllLines(Constants.filePath);
+                string[] fileContents = File.ReadAllLines(Constants.rushOrderFilePath);
 
-                foreach (string s in fileContents)
+                foreach (string line in fileContents)
                 {
-                    double item = Convert.ToDouble(s);
+                    double item = Convert.ToDouble(line);
 
                     if (optionCount < optionCountMax)
                     {
@@ -109,10 +153,10 @@ namespace Mega_Desk
             catch
             {
                 // show error message and return a default version of the costs
-                MessageBox.Show($"An error was encountered while attempting to load {Constants.filePath}\n" +
+                MessageBox.Show($"An error was encountered while attempting to load {Constants.rushOrderFilePath}\n" +
                     "Either the file cannot be found or the file is in the wrong format.\n" +
                     "Default values will be loaded.",
-                    "Error Loading File", MessageBoxButtons.OK);
+                    "Error Encountered While Opening File", MessageBoxButtons.OK);
                 rushOrderPrices = Constants.rushOrderPrices;
                 return rushOrderPrices;
             }

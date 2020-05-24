@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 
 namespace Mega_Desk
 {
@@ -13,12 +7,13 @@ namespace Mega_Desk
     /// to ease use across program and simplify
     /// the process of making changes
     /// 
-    /// Ideally these should probably be in a config file
+    /// Ideally many of these should probably be in a config file
     /// but that is outside the scope of this assignment
     /// </summary>
     static class Constants
     {
-        public readonly static string filePath = @"rushOrderPrices.txt";
+        public readonly static string rushOrderFilePath = @"rushOrderPrices.txt";
+        public readonly static string quoteFilePath = @"quotes.json";
         public const double minWidth = 24;
         public const double maxWidth = 96;
         public const double minDepth = 12;

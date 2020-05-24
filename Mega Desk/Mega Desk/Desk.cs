@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using Newtonsoft.Json;
 namespace Mega_Desk
 {
     public class Desk
     {
+        [JsonProperty]
         private double width;
+
+        [JsonProperty]
         private double depth;
+
+        [JsonProperty]
         private string material;
+
+        [JsonProperty]
         private int numberOfDrawers;
 
         // Non-default constructor

@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Newtonsoft.Json;
 
 namespace Mega_Desk
 {
     public class DeskQuote
     {
         public Customer customer;
+
+        [JsonProperty]
         int productionDays;
+
+        [JsonProperty]
         Desk desk;
 
         public void setDesk(double width, double depth, string material, int numDrawers)

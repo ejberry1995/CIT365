@@ -97,7 +97,7 @@ namespace Mega_Desk
             this.lastNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lastNameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.lastNameErrorProvider.SetIconPadding(this.lastNameBox, 2);
-            this.lastNameBox.Location = new System.Drawing.Point(233, 82);
+            this.lastNameBox.Location = new System.Drawing.Point(228, 82);
             this.lastNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(163, 22);
@@ -119,7 +119,7 @@ namespace Mega_Desk
             // 
             this.lastNameLabel.AutoSize = true;
             this.lastNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.lastNameLabel.Location = new System.Drawing.Point(230, 61);
+            this.lastNameLabel.Location = new System.Drawing.Point(225, 61);
             this.lastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(140, 17);
@@ -178,7 +178,7 @@ namespace Mega_Desk
             this.tableName.AutoSize = true;
             this.tableName.Font = new System.Drawing.Font("Rockwell Extra Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
-            this.tableName.Location = new System.Drawing.Point(105, 17);
+            this.tableName.Location = new System.Drawing.Point(115, 17);
             this.tableName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tableName.Name = "tableName";
             this.tableName.Size = new System.Drawing.Size(209, 35);
@@ -192,7 +192,7 @@ namespace Mega_Desk
             this.dimensionGroup.Controls.Add(this.widthBox);
             this.dimensionGroup.Controls.Add(this.depthLabel);
             this.dimensionGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.dimensionGroup.Location = new System.Drawing.Point(233, 112);
+            this.dimensionGroup.Location = new System.Drawing.Point(228, 108);
             this.dimensionGroup.Margin = new System.Windows.Forms.Padding(4);
             this.dimensionGroup.Name = "dimensionGroup";
             this.dimensionGroup.Padding = new System.Windows.Forms.Padding(4);
@@ -235,7 +235,7 @@ namespace Mega_Desk
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(227, 352);
+            this.cancelButton.Location = new System.Drawing.Point(228, 334);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(173, 75);
             this.cancelButton.TabIndex = 16;
@@ -250,7 +250,7 @@ namespace Mega_Desk
             this.calculateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.calculateButton.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculateButton.ForeColor = System.Drawing.Color.White;
-            this.calculateButton.Location = new System.Drawing.Point(227, 271);
+            this.calculateButton.Location = new System.Drawing.Point(228, 247);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(173, 75);
             this.calculateButton.TabIndex = 17;
@@ -288,7 +288,7 @@ namespace Mega_Desk
             this.numDrawersUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numDrawersUpDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.numDrawersErrorProvider.SetIconPadding(this.numDrawersUpDown, 2);
-            this.numDrawersUpDown.Location = new System.Drawing.Point(356, 235);
+            this.numDrawersUpDown.Location = new System.Drawing.Point(353, 219);
             this.numDrawersUpDown.Maximum = new decimal(new int[] {
             10,
             0,
@@ -304,7 +304,7 @@ namespace Mega_Desk
             // 
             this.numDrawersLabel.AutoSize = true;
             this.numDrawersLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.numDrawersLabel.Location = new System.Drawing.Point(224, 235);
+            this.numDrawersLabel.Location = new System.Drawing.Point(216, 219);
             this.numDrawersLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numDrawersLabel.Name = "numDrawersLabel";
             this.numDrawersLabel.Size = new System.Drawing.Size(130, 17);
@@ -315,16 +315,16 @@ namespace Mega_Desk
             // 
             this.materialListBox.FormattingEnabled = true;
             this.materialListBox.ItemHeight = 16;
-            this.materialListBox.Location = new System.Drawing.Point(37, 136);
+            this.materialListBox.Location = new System.Drawing.Point(37, 128);
             this.materialListBox.Name = "materialListBox";
-            this.materialListBox.Size = new System.Drawing.Size(135, 116);
+            this.materialListBox.Size = new System.Drawing.Size(164, 100);
             this.materialListBox.TabIndex = 19;
             // 
             // materialBoxLabel
             // 
             this.materialBoxLabel.AutoSize = true;
             this.materialBoxLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.materialBoxLabel.Location = new System.Drawing.Point(34, 116);
+            this.materialBoxLabel.Location = new System.Drawing.Point(34, 108);
             this.materialBoxLabel.Name = "materialBoxLabel";
             this.materialBoxLabel.Size = new System.Drawing.Size(111, 17);
             this.materialBoxLabel.TabIndex = 20;
@@ -335,9 +335,10 @@ namespace Mega_Desk
             this.groupBox1.Controls.Add(this.rushOptionsListBox);
             this.groupBox1.Controls.Add(this.rushOrderRadio);
             this.groupBox1.Controls.Add(this.standardOrderRadio);
-            this.groupBox1.Location = new System.Drawing.Point(37, 255);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
+            this.groupBox1.Location = new System.Drawing.Point(37, 235);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(175, 196);
+            this.groupBox1.Size = new System.Drawing.Size(175, 192);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Production Time";
@@ -355,6 +356,7 @@ namespace Mega_Desk
             // rushOrderRadio
             // 
             this.rushOrderRadio.AutoSize = true;
+            this.rushOrderRadio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.rushOrderRadio.Location = new System.Drawing.Point(6, 72);
             this.rushOrderRadio.Name = "rushOrderRadio";
             this.rushOrderRadio.Size = new System.Drawing.Size(103, 21);
@@ -367,6 +369,7 @@ namespace Mega_Desk
             // 
             this.standardOrderRadio.AutoSize = true;
             this.standardOrderRadio.Checked = true;
+            this.standardOrderRadio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.standardOrderRadio.Location = new System.Drawing.Point(6, 34);
             this.standardOrderRadio.Name = "standardOrderRadio";
             this.standardOrderRadio.Size = new System.Drawing.Size(91, 21);
@@ -380,7 +383,7 @@ namespace Mega_Desk
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(208)))), ((int)(((byte)(203)))));
-            this.ClientSize = new System.Drawing.Size(449, 463);
+            this.ClientSize = new System.Drawing.Size(440, 453);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.materialBoxLabel);

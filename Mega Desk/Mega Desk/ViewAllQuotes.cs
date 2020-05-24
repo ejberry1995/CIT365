@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Mega_Desk
@@ -28,13 +22,17 @@ namespace Mega_Desk
                 if (initiateSearch)
                 {
                     string searchCriteria = openSearchDialog();
-                    populateDataGrid(searchCriteria);
+                    if (searchCriteria != "")
+                        populateDataGrid(searchCriteria);
+                    else
+                        populateDataGrid();
                 }
                 else
                     populateDataGrid();
             }
             else
-                MessageBox.Show("No desk quotes are available display.\nDesk quotes will be viewable here after they are added.",
+                MessageBox.Show("No desk quotes are available display.\n" +
+                    "Desk quotes will be viewable here after they are added.",
                     "No quotes loaded", MessageBoxButtons.OK);
 
         }
@@ -48,7 +46,7 @@ namespace Mega_Desk
             quoteDataGrid.Columns.Add("depthCol", "Depth");
             quoteDataGrid.Columns.Add("numDrawersCol", "Number of Drawers");
             quoteDataGrid.Columns.Add("productionDaysCol", "Production Days");
-            quoteDataGrid.Columns.Add("quoteCol", "Desk Quote");
+            quoteDataGrid.Columns.Add("quoteCol", "Project Quote");
 
         }
 
@@ -145,5 +143,6 @@ namespace Mega_Desk
                 quoteDataGrid.Rows.RemoveAt(0);
             }
         }
+
     }
 }

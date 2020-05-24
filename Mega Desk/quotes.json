@@ -1,0 +1,5 @@
+{"customer":{"firstName":"Bruce","lastName":"Wayne"},"productionDays":7,"desk":{"width":48.0,"depth":22.0,"material":"oak","numberOfDrawers":3}}
+{"customer":{"firstName":"Peter","lastName":"Parker"},"productionDays":14,"desk":{"width":24.0,"depth":12.0,"material":"pine","numberOfDrawers":0}}
+{"customer":{"firstName":"Tony","lastName":"Stark"},"productionDays":3,"desk":{"width":96.0,"depth":48.0,"material":"rosewood","numberOfDrawers":7}}
+{"customer":{"firstName":"Clark","lastName":"Kent"},"productionDays":14,"desk":{"width":58.0,"depth":30.0,"material":"veneer","numberOfDrawers":4}}
+{"customer":{"firstName":"Dick","lastName":"Grayson"},"productionDays":5,"desk":{"width":32.0,"depth":18.0,"material":"laminate","numberOfDrawers":2}}
