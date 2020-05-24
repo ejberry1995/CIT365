@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,27 +47,49 @@ namespace Mega_Desk
 
         public double getQuote()
         {
-            double quote = 0;
+            double quote = Constants.baseDeskPrice;
+
             double deskSurfaceArea = desk.getSurfaceArea();
 
             if (deskSurfaceArea > Constants.mediumSizeLower)
                 quote += deskSurfaceArea * Constants.costPerSquareInch;
-            else
-                quote += Constants.costPerDrawer * desk.getNumOfDrawers();
+                
+            quote += Constants.costPerDrawer * desk.getNumOfDrawers();
 
             quote += Constants.materialCost[desk.getMaterial()];
 
-            if (productionDays > Constants.standardProduction)
+            if (productionDays < Constants.standardProduction)
             {
-                if (deskSurfaceArea < Constants.mediumSizeLower)
-                    quote += 0;
-                else if (deskSurfaceArea > Constants.mediumSizeUpper)
-                    quote += 0;
-                else
-                    quote += 0;
+                quote += getRushOrder(deskSurfaceArea);
             }
 
             return quote;
+        }
+
+        public double getRushOrder(double deskSurfaceArea)
+        {
+            double rushCost;
+            try
+            {
+                int rushIndex = Constants.rushOrderOptions.IndexOf(productionDays);
+                int sizeIndex;
+
+                if (deskSurfaceArea > Constants.mediumSizeUpper)
+                    sizeIndex = 2;
+                else if (deskSurfaceArea <= Constants.mediumSizeUpper
+                        && deskSurfaceArea >= Constants.mediumSizeLower)
+                    sizeIndex = 1;
+                else
+                    sizeIndex = 0;
+
+                rushCost = Constants.rushOrderPrices[rushIndex, sizeIndex];
+            }
+            catch
+            {
+                return 0;
+            }
+
+            return rushCost;
         }
     }
 

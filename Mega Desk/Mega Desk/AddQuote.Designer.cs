@@ -50,18 +50,6 @@ namespace Mega_Desk
             this.widthBox = new System.Windows.Forms.NumericUpDown();
             this.widthLabel = new System.Windows.Forms.Label();
             this.depthLabel = new System.Windows.Forms.Label();
-            this.materialGroup = new System.Windows.Forms.GroupBox();
-            this.radioMaterial2 = new System.Windows.Forms.RadioButton();
-            this.radioMaterial4 = new System.Windows.Forms.RadioButton();
-            this.radioMaterial3 = new System.Windows.Forms.RadioButton();
-            this.radioMaterial1 = new System.Windows.Forms.RadioButton();
-            this.radioMaterial0 = new System.Windows.Forms.RadioButton();
-            this.orderOptionsGroup = new System.Windows.Forms.GroupBox();
-            this.standardOrderLabel = new System.Windows.Forms.Label();
-            this.radioStandard = new System.Windows.Forms.RadioButton();
-            this.radioRush7 = new System.Windows.Forms.RadioButton();
-            this.radioRush5 = new System.Windows.Forms.RadioButton();
-            this.radioRush3 = new System.Windows.Forms.RadioButton();
             this.tableName = new System.Windows.Forms.Label();
             this.dimensionGroup = new System.Windows.Forms.GroupBox();
             this.depthBox = new System.Windows.Forms.NumericUpDown();
@@ -74,9 +62,13 @@ namespace Mega_Desk
             this.numDrawersErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.numDrawersUpDown = new System.Windows.Forms.NumericUpDown();
             this.numDrawersLabel = new System.Windows.Forms.Label();
+            this.materialListBox = new System.Windows.Forms.ListBox();
+            this.materialBoxLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rushOptionsListBox = new System.Windows.Forms.ListBox();
+            this.rushOrderRadio = new System.Windows.Forms.RadioButton();
+            this.standardOrderRadio = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.widthBox)).BeginInit();
-            this.materialGroup.SuspendLayout();
-            this.orderOptionsGroup.SuspendLayout();
             this.dimensionGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.depthBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstNameErrorProvider)).BeginInit();
@@ -85,6 +77,7 @@ namespace Mega_Desk
             ((System.ComponentModel.ISupportInitialize)(this.depthErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDrawersErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDrawersUpDown)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // firstNameBox
@@ -139,10 +132,25 @@ namespace Mega_Desk
             this.widthErrorProvider.SetIconPadding(this.widthBox, 2);
             this.widthBox.Location = new System.Drawing.Point(72, 32);
             this.widthBox.Margin = new System.Windows.Forms.Padding(4);
+            this.widthBox.Maximum = new decimal(new int[] {
+            96,
+            0,
+            0,
+            0});
+            this.widthBox.Minimum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
             this.widthBox.Name = "widthBox";
             this.widthBox.Size = new System.Drawing.Size(63, 22);
             this.widthBox.TabIndex = 4;
             this.widthBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.widthBox.Value = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
             this.widthBox.Leave += new System.EventHandler(this.widthBox_Leave);
             // 
             // widthLabel
@@ -165,159 +173,17 @@ namespace Mega_Desk
             this.depthLabel.TabIndex = 7;
             this.depthLabel.Text = "Depth";
             // 
-            // materialGroup
-            // 
-            this.materialGroup.Controls.Add(this.radioMaterial2);
-            this.materialGroup.Controls.Add(this.radioMaterial4);
-            this.materialGroup.Controls.Add(this.radioMaterial3);
-            this.materialGroup.Controls.Add(this.radioMaterial1);
-            this.materialGroup.Controls.Add(this.radioMaterial0);
-            this.materialGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.materialGroup.Location = new System.Drawing.Point(37, 112);
-            this.materialGroup.Margin = new System.Windows.Forms.Padding(4);
-            this.materialGroup.Name = "materialGroup";
-            this.materialGroup.Padding = new System.Windows.Forms.Padding(4);
-            this.materialGroup.Size = new System.Drawing.Size(163, 161);
-            this.materialGroup.TabIndex = 8;
-            this.materialGroup.TabStop = false;
-            this.materialGroup.Text = "Surface Material";
-            // 
-            // radioMaterial2
-            // 
-            this.radioMaterial2.AutoSize = true;
-            this.radioMaterial2.Location = new System.Drawing.Point(8, 81);
-            this.radioMaterial2.Margin = new System.Windows.Forms.Padding(4);
-            this.radioMaterial2.Name = "radioMaterial2";
-            this.radioMaterial2.Size = new System.Drawing.Size(17, 16);
-            this.radioMaterial2.TabIndex = 4;
-            this.radioMaterial2.UseVisualStyleBackColor = true;
-            // 
-            // radioMaterial4
-            // 
-            this.radioMaterial4.AutoSize = true;
-            this.radioMaterial4.Location = new System.Drawing.Point(8, 136);
-            this.radioMaterial4.Margin = new System.Windows.Forms.Padding(4);
-            this.radioMaterial4.Name = "radioMaterial4";
-            this.radioMaterial4.Size = new System.Drawing.Size(17, 16);
-            this.radioMaterial4.TabIndex = 3;
-            this.radioMaterial4.UseVisualStyleBackColor = true;
-            // 
-            // radioMaterial3
-            // 
-            this.radioMaterial3.AutoSize = true;
-            this.radioMaterial3.Location = new System.Drawing.Point(8, 108);
-            this.radioMaterial3.Margin = new System.Windows.Forms.Padding(4);
-            this.radioMaterial3.Name = "radioMaterial3";
-            this.radioMaterial3.Size = new System.Drawing.Size(17, 16);
-            this.radioMaterial3.TabIndex = 2;
-            this.radioMaterial3.UseVisualStyleBackColor = true;
-            // 
-            // radioMaterial1
-            // 
-            this.radioMaterial1.AutoSize = true;
-            this.radioMaterial1.Location = new System.Drawing.Point(8, 52);
-            this.radioMaterial1.Margin = new System.Windows.Forms.Padding(4);
-            this.radioMaterial1.Name = "radioMaterial1";
-            this.radioMaterial1.Size = new System.Drawing.Size(17, 16);
-            this.radioMaterial1.TabIndex = 1;
-            this.radioMaterial1.UseVisualStyleBackColor = true;
-            // 
-            // radioMaterial0
-            // 
-            this.radioMaterial0.AutoSize = true;
-            this.radioMaterial0.Checked = true;
-            this.radioMaterial0.Location = new System.Drawing.Point(8, 23);
-            this.radioMaterial0.Margin = new System.Windows.Forms.Padding(4);
-            this.radioMaterial0.Name = "radioMaterial0";
-            this.radioMaterial0.Size = new System.Drawing.Size(17, 16);
-            this.radioMaterial0.TabIndex = 0;
-            this.radioMaterial0.TabStop = true;
-            this.radioMaterial0.UseVisualStyleBackColor = true;
-            // 
-            // orderOptionsGroup
-            // 
-            this.orderOptionsGroup.Controls.Add(this.standardOrderLabel);
-            this.orderOptionsGroup.Controls.Add(this.radioStandard);
-            this.orderOptionsGroup.Controls.Add(this.radioRush7);
-            this.orderOptionsGroup.Controls.Add(this.radioRush5);
-            this.orderOptionsGroup.Controls.Add(this.radioRush3);
-            this.orderOptionsGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.orderOptionsGroup.Location = new System.Drawing.Point(37, 284);
-            this.orderOptionsGroup.Margin = new System.Windows.Forms.Padding(4);
-            this.orderOptionsGroup.Name = "orderOptionsGroup";
-            this.orderOptionsGroup.Padding = new System.Windows.Forms.Padding(4);
-            this.orderOptionsGroup.Size = new System.Drawing.Size(163, 151);
-            this.orderOptionsGroup.TabIndex = 9;
-            this.orderOptionsGroup.TabStop = false;
-            this.orderOptionsGroup.Text = "Rush Order Options";
-            // 
-            // standardOrderLabel
-            // 
-            this.standardOrderLabel.AutoSize = true;
-            this.standardOrderLabel.Location = new System.Drawing.Point(8, 105);
-            this.standardOrderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.standardOrderLabel.Name = "standardOrderLabel";
-            this.standardOrderLabel.Size = new System.Drawing.Size(138, 17);
-            this.standardOrderLabel.TabIndex = 10;
-            this.standardOrderLabel.Text = "Standard Production";
-            // 
-            // radioStandard
-            // 
-            this.radioStandard.AutoSize = true;
-            this.radioStandard.Checked = true;
-            this.radioStandard.Location = new System.Drawing.Point(8, 123);
-            this.radioStandard.Margin = new System.Windows.Forms.Padding(4);
-            this.radioStandard.Name = "radioStandard";
-            this.radioStandard.Size = new System.Drawing.Size(79, 21);
-            this.radioStandard.TabIndex = 10;
-            this.radioStandard.TabStop = true;
-            this.radioStandard.Text = "14 days";
-            this.radioStandard.UseVisualStyleBackColor = true;
-            // 
-            // radioRush7
-            // 
-            this.radioRush7.AutoSize = true;
-            this.radioRush7.Location = new System.Drawing.Point(8, 80);
-            this.radioRush7.Margin = new System.Windows.Forms.Padding(4);
-            this.radioRush7.Name = "radioRush7";
-            this.radioRush7.Size = new System.Drawing.Size(71, 21);
-            this.radioRush7.TabIndex = 2;
-            this.radioRush7.Text = "7 days";
-            this.radioRush7.UseVisualStyleBackColor = true;
-            // 
-            // radioRush5
-            // 
-            this.radioRush5.AutoSize = true;
-            this.radioRush5.Location = new System.Drawing.Point(8, 52);
-            this.radioRush5.Margin = new System.Windows.Forms.Padding(4);
-            this.radioRush5.Name = "radioRush5";
-            this.radioRush5.Size = new System.Drawing.Size(71, 21);
-            this.radioRush5.TabIndex = 1;
-            this.radioRush5.Text = "5 days";
-            this.radioRush5.UseVisualStyleBackColor = true;
-            // 
-            // radioRush3
-            // 
-            this.radioRush3.AutoSize = true;
-            this.radioRush3.Location = new System.Drawing.Point(8, 23);
-            this.radioRush3.Margin = new System.Windows.Forms.Padding(4);
-            this.radioRush3.Name = "radioRush3";
-            this.radioRush3.Size = new System.Drawing.Size(71, 21);
-            this.radioRush3.TabIndex = 0;
-            this.radioRush3.Text = "3 days";
-            this.radioRush3.UseVisualStyleBackColor = true;
-            // 
             // tableName
             // 
             this.tableName.AutoSize = true;
-            this.tableName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableName.Font = new System.Drawing.Font("Rockwell Extra Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
-            this.tableName.Location = new System.Drawing.Point(120, 11);
+            this.tableName.Location = new System.Drawing.Point(105, 17);
             this.tableName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tableName.Name = "tableName";
-            this.tableName.Size = new System.Drawing.Size(168, 31);
+            this.tableName.Size = new System.Drawing.Size(209, 35);
             this.tableName.TabIndex = 12;
-            this.tableName.Text = "Add A Quote";
+            this.tableName.Text = "New Quote";
             // 
             // dimensionGroup
             // 
@@ -341,10 +207,25 @@ namespace Mega_Desk
             this.widthErrorProvider.SetIconPadding(this.depthBox, 2);
             this.depthBox.Location = new System.Drawing.Point(72, 70);
             this.depthBox.Margin = new System.Windows.Forms.Padding(4);
+            this.depthBox.Maximum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            this.depthBox.Minimum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
             this.depthBox.Name = "depthBox";
             this.depthBox.Size = new System.Drawing.Size(63, 22);
             this.depthBox.TabIndex = 8;
             this.depthBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.depthBox.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
             this.depthBox.Leave += new System.EventHandler(this.depthBox_Leave);
             // 
             // cancelButton
@@ -352,7 +233,7 @@ namespace Mega_Desk
             this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(58)))), ((int)(((byte)(52)))));
             this.cancelButton.FlatAppearance.BorderSize = 0;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.White;
             this.cancelButton.Location = new System.Drawing.Point(227, 352);
             this.cancelButton.Name = "cancelButton";
@@ -367,7 +248,7 @@ namespace Mega_Desk
             this.calculateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(126)))), ((int)(((byte)(137)))));
             this.calculateButton.FlatAppearance.BorderSize = 0;
             this.calculateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.calculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculateButton.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculateButton.ForeColor = System.Drawing.Color.White;
             this.calculateButton.Location = new System.Drawing.Point(227, 271);
             this.calculateButton.Name = "calculateButton";
@@ -430,13 +311,80 @@ namespace Mega_Desk
             this.numDrawersLabel.TabIndex = 13;
             this.numDrawersLabel.Text = "Number of Drawers";
             // 
+            // materialListBox
+            // 
+            this.materialListBox.FormattingEnabled = true;
+            this.materialListBox.ItemHeight = 16;
+            this.materialListBox.Location = new System.Drawing.Point(37, 136);
+            this.materialListBox.Name = "materialListBox";
+            this.materialListBox.Size = new System.Drawing.Size(135, 116);
+            this.materialListBox.TabIndex = 19;
+            // 
+            // materialBoxLabel
+            // 
+            this.materialBoxLabel.AutoSize = true;
+            this.materialBoxLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
+            this.materialBoxLabel.Location = new System.Drawing.Point(34, 116);
+            this.materialBoxLabel.Name = "materialBoxLabel";
+            this.materialBoxLabel.Size = new System.Drawing.Size(111, 17);
+            this.materialBoxLabel.TabIndex = 20;
+            this.materialBoxLabel.Text = "Surface Material";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rushOptionsListBox);
+            this.groupBox1.Controls.Add(this.rushOrderRadio);
+            this.groupBox1.Controls.Add(this.standardOrderRadio);
+            this.groupBox1.Location = new System.Drawing.Point(37, 255);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(175, 196);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Order Production Time";
+            // 
+            // rushOptionsListBox
+            // 
+            this.rushOptionsListBox.Enabled = false;
+            this.rushOptionsListBox.FormattingEnabled = true;
+            this.rushOptionsListBox.ItemHeight = 16;
+            this.rushOptionsListBox.Location = new System.Drawing.Point(29, 99);
+            this.rushOptionsListBox.Name = "rushOptionsListBox";
+            this.rushOptionsListBox.Size = new System.Drawing.Size(108, 68);
+            this.rushOptionsListBox.TabIndex = 2;
+            // 
+            // rushOrderRadio
+            // 
+            this.rushOrderRadio.AutoSize = true;
+            this.rushOrderRadio.Location = new System.Drawing.Point(6, 72);
+            this.rushOrderRadio.Name = "rushOrderRadio";
+            this.rushOrderRadio.Size = new System.Drawing.Size(103, 21);
+            this.rushOrderRadio.TabIndex = 1;
+            this.rushOrderRadio.Text = "Rush Order";
+            this.rushOrderRadio.UseVisualStyleBackColor = true;
+            this.rushOrderRadio.CheckedChanged += new System.EventHandler(this.rushOrderRadio_CheckedChanged);
+            // 
+            // standardOrderRadio
+            // 
+            this.standardOrderRadio.AutoSize = true;
+            this.standardOrderRadio.Checked = true;
+            this.standardOrderRadio.Location = new System.Drawing.Point(6, 34);
+            this.standardOrderRadio.Name = "standardOrderRadio";
+            this.standardOrderRadio.Size = new System.Drawing.Size(91, 21);
+            this.standardOrderRadio.TabIndex = 0;
+            this.standardOrderRadio.TabStop = true;
+            this.standardOrderRadio.Text = "Standard ";
+            this.standardOrderRadio.UseVisualStyleBackColor = true;
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(208)))), ((int)(((byte)(203)))));
-            this.ClientSize = new System.Drawing.Size(438, 463);
+            this.ClientSize = new System.Drawing.Size(449, 463);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.materialBoxLabel);
+            this.Controls.Add(this.materialListBox);
             this.Controls.Add(this.numDrawersUpDown);
             this.Controls.Add(this.lastNameBox);
             this.Controls.Add(this.calculateButton);
@@ -447,16 +395,10 @@ namespace Mega_Desk
             this.Controls.Add(this.dimensionGroup);
             this.Controls.Add(this.numDrawersLabel);
             this.Controls.Add(this.tableName);
-            this.Controls.Add(this.orderOptionsGroup);
-            this.Controls.Add(this.materialGroup);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddQuote";
-            this.Text = "Mega Desk: Project Quote Calculator";
+            this.Text = "Mega Desk: Project Quote Calculator - Add a New Quote";
             ((System.ComponentModel.ISupportInitialize)(this.widthBox)).EndInit();
-            this.materialGroup.ResumeLayout(false);
-            this.materialGroup.PerformLayout();
-            this.orderOptionsGroup.ResumeLayout(false);
-            this.orderOptionsGroup.PerformLayout();
             this.dimensionGroup.ResumeLayout(false);
             this.dimensionGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.depthBox)).EndInit();
@@ -466,6 +408,8 @@ namespace Mega_Desk
             ((System.ComponentModel.ISupportInitialize)(this.depthErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDrawersErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDrawersUpDown)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,18 +424,6 @@ namespace Mega_Desk
         private System.Windows.Forms.NumericUpDown widthBox;
         private System.Windows.Forms.Label widthLabel;
         private System.Windows.Forms.Label depthLabel;
-        private System.Windows.Forms.GroupBox materialGroup;
-        private System.Windows.Forms.RadioButton radioMaterial0;
-        private System.Windows.Forms.RadioButton radioMaterial2;
-        private System.Windows.Forms.RadioButton radioMaterial4;
-        private System.Windows.Forms.RadioButton radioMaterial3;
-        private System.Windows.Forms.RadioButton radioMaterial1;
-        private System.Windows.Forms.GroupBox orderOptionsGroup;
-        private System.Windows.Forms.Label standardOrderLabel;
-        private System.Windows.Forms.RadioButton radioStandard;
-        private System.Windows.Forms.RadioButton radioRush7;
-        private System.Windows.Forms.RadioButton radioRush5;
-        private System.Windows.Forms.RadioButton radioRush3;
         private System.Windows.Forms.Label tableName;
         private System.Windows.Forms.GroupBox dimensionGroup;
         private System.Windows.Forms.Button cancelButton;
@@ -499,5 +431,11 @@ namespace Mega_Desk
         private Label numDrawersLabel;
         private NumericUpDown numDrawersUpDown;
         private NumericUpDown depthBox;
+        private ListBox materialListBox;
+        private Label materialBoxLabel;
+        private GroupBox groupBox1;
+        private RadioButton standardOrderRadio;
+        private ListBox rushOptionsListBox;
+        private RadioButton rushOrderRadio;
     }
 }

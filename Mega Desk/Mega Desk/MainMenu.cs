@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,11 @@ namespace Mega_Desk
         public ViewAllQuotes viewAllQuotes;
 
         List<DeskQuote> deskQuoteList = new List<DeskQuote>();
+        public double[,] rushOrderPrices;
 
         public MainMenu()
         {
+            rushOrderPrices = loadRushOrderPrices();
             InitializeComponent();
 
         }
@@ -60,7 +63,7 @@ namespace Mega_Desk
 
         private void searchQuotesButton_Click(object sender, EventArgs e)
         {
-            viewAllQuotes = new ViewAllQuotes(deskQuoteList);
+            viewAllQuotes = new ViewAllQuotes(deskQuoteList,true);
             viewAllQuotes.ShowDialog();
         }
 
@@ -70,5 +73,51 @@ namespace Mega_Desk
             viewAllQuotes.ShowDialog();
         }
 
+        public double[,] loadRushOrderPrices()
+        { 
+            try
+            {
+                int sizeCountMax = 2;
+                int optionCountMax = Constants.rushOrderOptions.Count - 1;
+                int sizeCount = 0;
+                int optionCount = 0;
+
+                double[,] rushOrderPrices = new double[optionCountMax + 1, Constants.rushOrderOptions.Count];
+
+                string[] fileContents = File.ReadAllLines(Constants.filePath);
+
+                foreach (string s in fileContents)
+                {
+                    double item = Convert.ToDouble(s);
+
+                    if (optionCount < optionCountMax)
+                    {
+                        rushOrderPrices[optionCount, sizeCount] = item;
+                        sizeCount++;
+
+                        if (sizeCount > sizeCountMax)
+                        {
+                            sizeCount = 0;
+                            optionCount++;
+                        }
+                    }
+
+                }
+
+                return rushOrderPrices;
+            }
+            catch
+            {
+                // show error message and return a default version of the costs
+                MessageBox.Show($"An error was encountered while attempting to load {Constants.filePath}\n" +
+                    "Either the file cannot be found or the file is in the wrong format.\n" +
+                    "Default values will be loaded.",
+                    "Error Loading File", MessageBoxButtons.OK);
+                rushOrderPrices = Constants.rushOrderPrices;
+                return rushOrderPrices;
+            }
+        }
+
     }
+
 }

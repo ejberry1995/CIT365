@@ -14,19 +14,42 @@ namespace Mega_Desk
     {
         public DeskQuote newQuote;
 
+        List<string> materialsList = new List<string>();
+        List<string> rushOptionsList = new List<string>();
+
         public AddQuote()
         {
             InitializeComponent();
             newQuote = null;
 
-            radioMaterial0.Text = Constants.materialCost.Keys.ElementAt(0);
-            radioMaterial1.Text = Constants.materialCost.Keys.ElementAt(1);
-            radioMaterial2.Text = Constants.materialCost.Keys.ElementAt(2);
-            radioMaterial3.Text = Constants.materialCost.Keys.ElementAt(3);
-            radioMaterial4.Text = Constants.materialCost.Keys.ElementAt(4);
+            populateSelectionBoxes();
 
+        }
+
+        private void populateSelectionBoxes()
+        {
+            // simplify the input of the width and depth 
+            // by defaulting the values to the minimum
             widthBox.Value = (decimal)Constants.minWidth;
             depthBox.Value = (decimal)Constants.minDepth;
+
+            //get the materials from the material/cost dictionary 
+            //and store them in a list for simpilier access in the ListBox
+            int count = 0;
+            foreach (string item in Constants.materialCost.Keys)
+            {
+                materialsList.Add(Constants.materialCost.Keys.ElementAt(count));
+                count++;
+            }
+            //populate the ListBoxes with values from the cooresponding lists
+            materialListBox.DataSource = materialsList;
+
+            foreach (int item in Constants.rushOrderOptions)
+                rushOptionsList.Add(item.ToString() + " days");
+            
+            rushOptionsListBox.DataSource = rushOptionsList;
+
+            standardOrderRadio.Text += "(" + Constants.standardProduction + " days)";
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -161,46 +184,18 @@ namespace Mega_Desk
 
         private int getDaysSelection() 
         {
-            if (radioRush3.Checked == true)
-            {
-                return 3;
-            }
-            else if (radioRush5.Checked == true)
-            {
-                return 5;
-            }
-            else if (radioRush7.Checked == true)
-            {
-                return 7;
-            }
-            else
+            if (standardOrderRadio.Checked == true)
                 return Constants.standardProduction;
+            else
+            {
+               string selection = rushOptionsListBox.SelectedItem.ToString();
+                return int.Parse(selection[0].ToString());
+            }
         }
 
         private string getMaterialSelection()
         {
-            if (this.radioMaterial0.Checked == true)
-            {
-                return Constants.materialCost.Keys.ElementAt(0);
-            }
-            else if (this.radioMaterial1.Checked == true)
-            {
-                return Constants.materialCost.Keys.ElementAt(1);
-            }
-            else if (this.radioMaterial2.Checked == true)
-            {
-                return Constants.materialCost.Keys.ElementAt(2);
-            }
-            else if (this.radioMaterial3.Checked == true)
-            {
-                return Constants.materialCost.Keys.ElementAt(3);
-            }
-            else if (this.radioMaterial4.Checked == true)
-            {
-                return Constants.materialCost.Keys.ElementAt(4);
-            }
-
-            return "unknown";
+            return materialListBox.SelectedItem.ToString();
         }
 
         private void widthBox_Leave(object sender, EventArgs e)
@@ -226,6 +221,14 @@ namespace Mega_Desk
         private void lastNameBox_Leave(object sender, EventArgs e)
         {
             checkLastName();
+        }
+
+        private void rushOrderRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rushOrderRadio.Checked == true)
+                rushOptionsListBox.Enabled = true;
+            else
+                rushOptionsListBox.Enabled = false;
         }
     }
 }

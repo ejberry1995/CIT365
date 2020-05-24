@@ -37,6 +37,7 @@ namespace Mega_Desk
             this.quoteDataGrid = new System.Windows.Forms.DataGridView();
             this.closeButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.quoteDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +106,22 @@ namespace Mega_Desk
             this.searchButton.TabIndex = 18;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // resetButton
+            // 
+            this.resetButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(126)))), ((int)(((byte)(137)))));
+            this.resetButton.FlatAppearance.BorderSize = 0;
+            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.ForeColor = System.Drawing.Color.White;
+            this.resetButton.Location = new System.Drawing.Point(490, 23);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(173, 75);
+            this.resetButton.TabIndex = 19;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = false;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // ViewAllQuotes
             // 
@@ -112,6 +129,7 @@ namespace Mega_Desk
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 621);
             this.ControlBox = false;
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.quoteDataGrid);
@@ -119,7 +137,7 @@ namespace Mega_Desk
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewAllQuotes";
-            this.Text = "Mega Desk: Project Quote Calculator";
+            this.Text = "Mega Desk: Project Quote Calculator - View All Quotes";
             ((System.ComponentModel.ISupportInitialize)(this.quoteDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,5 +150,6 @@ namespace Mega_Desk
         private System.Windows.Forms.DataGridView quoteDataGrid;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button resetButton;
     }
 }
